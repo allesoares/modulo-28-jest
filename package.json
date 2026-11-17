@@ -1,0 +1,28 @@
+{
+  "name": "modulo-28-jest",
+  "version": "1.0.0",
+  "description": "Testes de unidade com Jest para validacao de cadastro de usuario - Modulo 28",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "usuario.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "usuario.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
+  },
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}
