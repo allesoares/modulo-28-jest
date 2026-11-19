@@ -1,102 +1,11 @@
 # Módulo 28 — Testes de unidade com Jest
 
-Testes para o exercicio de javascript do mudulo 27
-
-## Objetivo
-
-Neste exercício você irá praticar conceitos básicos de **JavaScript**, incluindo:
-
-- Tipos de dados
-- Variáveis
-- Operadores de comparação
-- Operadores lógicos
-- Funções
-- Manipulação de objetos
-
-O objetivo é implementar algumas funções que validam se um **cadastro de usuário é válido**.
-
-Este código também será utilizado no **próximo módulo**, onde criaremos **testes automatizados com Jest**.
-
----
-
-# Cenário
-
-Um sistema possui um cadastro de usuários e precisa validar algumas regras antes de considerar o cadastro válido.
-
-As regras são:
-
-- O usuário deve ter **18 anos ou mais**
-- O email deve conter **"@"**
-- O usuário deve estar **ativo**
-
----
-
-# Desafio
-
-No arquivo `usuario.js`, as funções do desafio estão implementadas.
-
-As funções implementadas são:
-
-## verificarMaiorIdade
-
-Esta função deve retornar:
-
-- `true` se a idade for **maior ou igual a 18**
-- `false` caso contrário
-
----
-
-## usuarioAtivo
-
-Esta função deve verificar se o usuário está ativo.
-
-Ela deve retornar:
-
-- `true` se o usuário estiver ativo
-- `false` caso contrário
-
----
-## Como executar o exercício
-
-1. Abra o terminal
-
-2. Acesse a pasta do projeto
-
-
-cd nome-da-pasta-do-projeto
-
-
-3. Execute o arquivo JavaScript com Node.js
-
-
-node usuario.js
-
-
----
-
-## Resultado esperado
-
-Após implementar corretamente as funções, o resultado no console deve ser parecido com este:
-
-
-Usuário 1 válido? true
-
-Usuário 2 válido? false
-
-## Solução do módulo 27
-
-- `verificarMaiorIdade(idade)` usa `idade >= 18`, incluindo quem tem exatamente 18 anos.
-- `usuarioAtivo(usuario)` usa `usuario.ativo === true`, retornando um booleano.
-- `validarCadastro(usuario)` combina maioridade, email válido e usuário ativo com `&&`.
-
-Para conferir os dois cenários fornecidos, execute `node usuario.js`.
-
-## Módulo 28 — Testes de unidade com Jest
+Testes de unidade para o exercício de validação de cadastro de usuário do módulo 27.
 
 Os testes estão em `usuario.test.js`, ao lado de `usuario.js`, e validam as
 quatro funções exportadas sem alterar as regras implementadas no módulo 27.
 
-### Como executar
+## Como executar
 
 Com Node.js e npm instalados, execute na pasta do projeto:
 
@@ -105,7 +14,28 @@ npm ci
 npm test
 ```
 
-### Cenários e técnica aplicada
+O comando `npm test` gera o relatório de cobertura. Abra
+`coverage/lcov-report/index.html` no navegador para consultar os detalhes.
+A cobertura considera as funções de validação; o bloco de demonstração no console
+é excluído da instrumentação. As pastas `node_modules/` e `coverage/` são geradas
+localmente e ignoradas pelo Git.
+
+Para executar os exemplos no console:
+
+```sh
+node usuario.js
+```
+
+Saída esperada:
+
+```text
+Usuário 1 válido? true
+Usuário 2 válido? false
+```
+
+Ao importar `usuario.js` nos testes, esses exemplos não são executados.
+
+## Cenários e técnica aplicada
 
 - `verificarMaiorIdade`: 17, 18 e 19 anos, aplicando análise de valor limite.
 - `validarEmail`: email com `@`, sem `@` e vazio. A regra verifica apenas a
@@ -130,4 +60,4 @@ pontos de interrupção da expressão `&&` quando uma condição é falsa.
 | Não | Não | Sim | Não |
 | Não | Não | Não | Não |
 
-A suíte possui **19 cenários**. 
+A suíte possui **19 cenários**.

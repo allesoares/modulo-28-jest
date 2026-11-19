@@ -70,8 +70,12 @@ function validarCadastro(usuario) {
 // Usuário 1 válido? true
 // Usuário 2 válido? false
 
-console.log("Usuário 1 válido?", validarCadastro(usuario))
-console.log("Usuário 2 válido?", validarCadastro(usuarioInvalido))
+// Demonstração manual; não faz parte da cobertura das funções de validação.
+/* istanbul ignore next */
+if (require.main === module) {
+  console.log("Usuário 1 válido?", validarCadastro(usuario))
+  console.log("Usuário 2 válido?", validarCadastro(usuarioInvalido))
+}
 
 // NÃO ALTERAR
 // Essas exportações serão usadas no próximo módulo
