@@ -1,9 +1,11 @@
 # Módulo 28 — Testes de unidade com Jest
 
-Testes de unidade para o exercício de validação de cadastro de usuário do módulo 27.
+Neste projeto, escrevi testes com Jest para as funções de validação de cadastro que implementei no módulo 27. Trabalhei com valores limite e com as combinações das regras para conferir quando o cadastro deve ser aceito ou recusado.
 
 Os testes estão em `usuario.test.js`, ao lado de `usuario.js`, e validam as
 quatro funções exportadas sem alterar as regras implementadas no módulo 27.
+
+**Tecnologias:** JavaScript, Node.js e Jest.
 
 ## Como executar
 
@@ -60,4 +62,12 @@ pontos de interrupção da expressão `&&` quando uma condição é falsa.
 | Não | Não | Sim | Não |
 | Não | Não | Não | Não |
 
-A suíte possui **19 cenários**.
+A suíte possui **19 cenários**. O comando `npm test` também exige 100% de cobertura de instruções, branches, funções e linhas nas funções avaliadas.
+
+O código de origem está no [exercício de JavaScript do módulo 27](https://github.com/allesoares/exercicio-js).
+
+## Contexto
+
+Exercício desenvolvido por Alexandre Soares durante o curso da EBAC, com a aplicação e os exemplos fornecidos nas aulas.
+
+[Voltar ao portfólio](https://github.com/allesoares/qa-portfolio)
